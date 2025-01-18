@@ -15,22 +15,42 @@ function App() {
     },
     education: {
       school: "State university",
-      years: "2020",
+      graduation: "2020",
     },
     experience: {
       company: "StartDown Corp",
       position: "Junior Web Developer",
-      date: "2022-2024",
+      period: "2022-2024",
+    },
+    showing: {
+      general: true,
+      education: true,
+      experience: true,
     },
   });
+
+  function handleGeneralForm(generalObj) {
+    const newInfo = { ...info, general: generalObj };
+    setInfo(newInfo);
+  }
+
+  function handleEducationForm(educationObj) {
+    const newInfo = { ...info, education: educationObj };
+    setInfo(newInfo);
+  }
+
+  function handleExperienceForm(experienceObj) {
+    const newInfo = { ...info, experience: experienceObj };
+    setInfo(newInfo);
+  }
 
   return (
     <div className="container">
       <aside className="forms">
         <h1>Enter your info below</h1>
-        <GeneralForm />
-        <EducationForm />
-        <ExperienceForm />
+        <GeneralForm handleGeneralForm={handleGeneralForm} />
+        <EducationForm handleEducationForm={handleEducationForm} />
+        <ExperienceForm handleExperienceForm={handleExperienceForm} />
       </aside>
       <main className="resume">
         <Resume info={info} />
