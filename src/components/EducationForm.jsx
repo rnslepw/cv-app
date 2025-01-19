@@ -5,15 +5,14 @@ function EducationForm({ handleEducationForm }) {
     school: "",
     graduation: "",
   });
-  return (
+  const [open, setOpen] = useState(true);
+
+  return open ? (
     <form
       onSubmit={(e) => {
         e.preventDefault();
         handleEducationForm(inputs);
-        setInputs({
-          school: "",
-          graduation: "",
-        });
+        setOpen(false);
       }}
     >
       <legend>Education</legend>
@@ -39,6 +38,13 @@ function EducationForm({ handleEducationForm }) {
       </fieldset>
       <button type="submit">Add</button>
     </form>
+  ) : (
+    <div className="form-bar">
+      <span className="bar-title">Education</span>
+      <button className="edit-btn" onClick={() => setOpen(true)}>
+        Edit
+      </button>
+    </div>
   );
 }
 

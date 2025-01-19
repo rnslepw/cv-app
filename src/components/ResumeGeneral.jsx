@@ -27,7 +27,6 @@ function ResumeGeneral({ general }) {
           </svg>
           {general.phone}
         </p>
-        <button className="edit-btn">Edit</button>
       </div>
       <div className="general-photo"></div>
     </section>

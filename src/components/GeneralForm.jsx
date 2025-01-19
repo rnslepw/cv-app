@@ -6,17 +6,14 @@ function GeneralForm({ handleGeneralForm }) {
     email: "",
     phone: "",
   });
+  const [open, setOpen] = useState(true);
 
-  return (
+  return open ? (
     <form
       onSubmit={(e) => {
         e.preventDefault();
         handleGeneralForm(inputs);
-        setInputs({
-          name: "",
-          email: "",
-          phone: "",
-        });
+        setOpen(false);
       }}
     >
       <legend>General</legend>
@@ -52,6 +49,13 @@ function GeneralForm({ handleGeneralForm }) {
       </fieldset>
       <button type="submit">Add</button>
     </form>
+  ) : (
+    <div className="form-bar">
+      <span className="bar-title">General</span>
+      <button className="edit-btn" onClick={() => setOpen(true)}>
+        Edit
+      </button>
+    </div>
   );
 }
 

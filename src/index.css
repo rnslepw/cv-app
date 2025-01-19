@@ -28,13 +28,26 @@ body {
 }
 
 form {
-  padding: 1rem 1rem;
+  padding: 1rem;
   width: 80%;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   align-items: center;
   background-color: lightcoral;
+}
+
+.form-bar {
+  width: 80%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: lightcoral;
+}
+
+.bar-title {
+  font-size: 1.25rem;
 }
 
 fieldset {
@@ -78,6 +91,10 @@ section,
   gap: 1.5rem;
 }
 
+.general-text {
+  gap: 3rem;
+}
+
 .resume-general {
   flex-direction: row;
   justify-content: space-between;
@@ -93,7 +110,8 @@ h2 {
 
 .general-photo {
   background-color: lightgrey;
-  width: 10rem;
+  width: 13rem;
+  height: 15rem;
 }
 
 .text-container {
@@ -126,6 +144,6 @@ h2 {
     grid-template-columns: 1fr 2fr;
   }
   .resume {
-    padding: 3rem 10rem;
+    padding: 3rem 15rem;
   }
 }

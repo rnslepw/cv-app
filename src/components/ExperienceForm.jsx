@@ -6,17 +6,14 @@ function ExperienceForm({ handleExperienceForm }) {
     position: "",
     period: "",
   });
+  const [open, setOpen] = useState(true);
 
-  return (
+  return open ? (
     <form
       onSubmit={(e) => {
         e.preventDefault();
         handleExperienceForm(inputs);
-        setInputs({
-          company: "",
-          position: "",
-          period: "",
-        });
+        setOpen(false);
       }}
     >
       <legend>Experience</legend>
@@ -52,6 +49,13 @@ function ExperienceForm({ handleExperienceForm }) {
       </fieldset>
       <button type="submit">Add</button>
     </form>
+  ) : (
+    <div className="form-bar">
+      <span className="bar-title">Experience</span>
+      <button className="edit-btn" onClick={() => setOpen(true)}>
+        Edit
+      </button>
+    </div>
   );
 }
 

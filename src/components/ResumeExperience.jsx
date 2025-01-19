@@ -5,7 +5,6 @@ function ResumeExperience({ experience }) {
       <p>Company: {experience.company}</p>
       <p>Position: {experience.position}</p>
       <p>Period: {experience.period}</p>
-      <button className="edit-btn">Edit</button>
     </section>
   );
 }
